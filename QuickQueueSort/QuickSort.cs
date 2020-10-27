@@ -26,7 +26,7 @@ namespace QuickQueueSort
           //если цикл дошел до нужной позиции => в ValueGet записывается значение
           if (i == Position)
           {
-            N_op++;
+            N_op += 2;
             ValueGet = Peek();
           }
 
@@ -34,6 +34,7 @@ namespace QuickQueueSort
           //если позиция не равна единице =>  тогда 1ый элемент отправляем в конец  очереди
           if (Position != 1)
           {
+            N_op += 2;
             Enqueue(Dequeue());
           }
           //иначе цикл прекращается
@@ -69,12 +70,16 @@ namespace QuickQueueSort
             //если цикл дошел до нужной позиции => "голова" удаляется и в "хвост" записывается значение передаваемое параметром
             if (i == Position)
             {
+              N_op += 2;
               Dequeue();
               Enqueue(ValueSet);
             }
             //иначе 1 элемент будет отправляться в конец
             else
+            {
+              N_op += 2;
               Enqueue(Dequeue());
+            }
           }
         }
         //если кол-во элементов в очереди меньше переданной позиции 
@@ -84,6 +89,7 @@ namespace QuickQueueSort
           //если переданная позиция равна кол-ву элементов в очереди + 1 => добавляется значение в начало
           if (Position == Count1)
           {
+            N_op++;
             Enqueue(ValueSet);
           }
             
@@ -93,10 +99,12 @@ namespace QuickQueueSort
             N_op += 4;
             for (int i = Count + 1; i < Position; i++)
             {
+              N_op++;
               Enqueue(0);
             }
 
             //а на место переданной позиции установится переданной значение
+            N_op++;
             Enqueue(ValueSet);
           }
         }
