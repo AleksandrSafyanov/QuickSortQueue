@@ -165,13 +165,18 @@ namespace QuickQueueSort
           }
         }
       }
-      N_op++;
-      if (left - 1 > leftBorder)
-        QuickSort(leftBorder, left - 1);
-
-      N_op++;
+      N_op+=2;
+      if (left - 1 > leftBorder)  //2
+      {
+        N_op++;
+        QuickSort(leftBorder, left - 1); //left - 1 => 1 операция
+      }
+      N_op+=2;
       if (right + 1 < rightBorder)
+      {
+        N_op++;
         QuickSort(right + 1, rightBorder);
+      }
     }
 
     //метод замены элементов местами
