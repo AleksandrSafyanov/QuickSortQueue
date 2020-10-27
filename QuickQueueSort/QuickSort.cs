@@ -69,8 +69,8 @@ namespace QuickQueueSort
             //если цикл дошел до нужной позиции => "голова" удаляется и в "хвост" записывается значение передаваемое параметром
             if (i == Position)
             {
-              Dequeue();  //8
-              Enqueue(ValueSet);  //20
+              Dequeue();
+              Enqueue(ValueSet);
             }
             //иначе 1 элемент будет отправляться в конец
             else
