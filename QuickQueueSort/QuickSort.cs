@@ -16,7 +16,7 @@ namespace QuickQueueSort
         int ValueGet = 0;
 
         N_op++;
-        int Count1 = Count;
+        int Count1 = Count + 1;
 
         N_op += 2;
         //переборка всех значений очереди
@@ -56,7 +56,7 @@ namespace QuickQueueSort
       if (Count != 0)
       {
         N_op++;
-        int Count1 = Count;
+        int Count1 = Count + 1;
         N_op += 2;
         //если кол-во элементов в очереди больше переданной позиции
         if (Position <= Count)
@@ -80,9 +80,9 @@ namespace QuickQueueSort
         //если кол-во элементов в очереди меньше переданной позиции 
         else
         {
-          N_op += 2;
+          N_op++;
           //если переданная позиция равна кол-ву элементов в очереди + 1 => добавляется значение в начало
-          if (Position == Count + 1)
+          if (Position == Count1)
           {
             Enqueue(ValueSet);
           }
