@@ -20,9 +20,10 @@ namespace QuickQueueSort
 
       Random rnd = new Random();
 
-      //for (int j = 0; j < 3000; j++)
+      //for (int j = 0; j < _digitsCount; j++)
       //{
       //  key[j] = rnd.Next(3000);
+      //  queue.Enqueue(key[j]);
       //}
 
       for (int i = 0; i < 10; i++)
@@ -58,15 +59,26 @@ namespace QuickQueueSort
 
       //Console.WriteLine("Unsorted queue:");
       //for (int i = 0; i < _digitsCount; i++)
-      //  Console.Write("{0,6}", key[i]
+      //  Console.Write("{0,6}", key[i]);
+
+      //time.Start();
 
       //queue.QuickSort(1, _digitsCount);
+
+      //time.Stop();
 
       //Console.WriteLine("\nSorted queue:");
       //for (int i = 0; i < _digitsCount; i++)
       //  Console.Write("{0,6}", queue.Dequeue());
 
-      Console.ReadLine();
+      //TimeSpan interval = TimeSpan.FromMilliseconds((double)time.ElapsedMilliseconds);
+      //Console.WriteLine($"Sorting number: {1}");
+      //Console.WriteLine($"\tNumber of sorted items: {_digitsCount};");
+      //Console.WriteLine($"\tSorting time (h.m.s.ms): {interval.Hours}, {interval.Minutes}, {interval.Seconds}, {interval.Milliseconds};");
+      //Console.WriteLine($"\tThe number of operations (N_op): {queue.N_op}");
+      //Console.WriteLine();
+
+      //Console.ReadLine();
     }
   }
 }
