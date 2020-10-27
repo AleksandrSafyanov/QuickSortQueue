@@ -54,15 +54,13 @@ namespace QuickQueueSort
         //очищаем очередь для последующей сортировки с большим кол-вом элементов
         queue.Clear();
         time.Reset();
-      }      
-
-      //Console.WriteLine("_________________________________________________________");
-      //Console.WriteLine($"Count of items in the queue: {queue.Count}");
-      //Console.WriteLine("_________________________________________________________");
+      }
 
       //Console.WriteLine("Unsorted queue:");
       //for (int i = 0; i < _digitsCount; i++)
-      //  Console.Write("{0,6}", key[i
+      //  Console.Write("{0,6}", key[i]
+
+      //queue.QuickSort(1, _digitsCount);
 
       //Console.WriteLine("\nSorted queue:");
       //for (int i = 0; i < _digitsCount; i++)

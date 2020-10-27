@@ -26,7 +26,7 @@ namespace QuickQueueSort
           //если цикл дошел до нужной позиции => в ValueGet записывается значение
           if (i == Position)
           {
-            N_op += 5;
+            N_op++;
             ValueGet = Peek();
           }
 
@@ -34,20 +34,17 @@ namespace QuickQueueSort
           //если позиция не равна единице =>  тогда 1ый элемент отправляем в конец  очереди
           if (Position != 1)
           {
-            N_op += 12 + 8;
             Enqueue(Dequeue());
           }
           //иначе цикл прекращается
           else
             break;
         }
-        N_op++;
         return ValueGet;
       }
       else
       {
         Console.WriteLine("Queue is Empty!");
-        N_op++;
         return 0;
       }
     }
@@ -72,16 +69,12 @@ namespace QuickQueueSort
             //если цикл дошел до нужной позиции => "голова" удаляется и в "хвост" записывается значение передаваемое параметром
             if (i == Position)
             {
-              N_op += 20;
               Dequeue();  //8
               Enqueue(ValueSet);  //20
             }
             //иначе 1 элемент будет отправляться в конец
             else
-            {
-              N_op += 20;
               Enqueue(Dequeue());
-            }
           }
         }
         //если кол-во элементов в очереди меньше переданной позиции 
@@ -91,7 +84,6 @@ namespace QuickQueueSort
           //если переданная позиция равна кол-ву элементов в очереди + 1 => добавляется значение в начало
           if (Position == Count + 1)
           {
-            N_op += 12;
             Enqueue(ValueSet);
           }
             
@@ -101,10 +93,9 @@ namespace QuickQueueSort
             N_op += 4;
             for (int i = Count + 1; i < Position; i++)
             {
-              N_op += 2 + 12;
               Enqueue(0);
             }
-            N_op += 12;
+
             //а на место переданной позиции установится переданной значение
             Enqueue(ValueSet);
           }
@@ -113,7 +104,6 @@ namespace QuickQueueSort
       else
       {
         Console.WriteLine("Queue is Empty!");
-        N_op++;
         return;
       }    
     }
