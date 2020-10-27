@@ -27,7 +27,6 @@ namespace QuickQueueSort
 
       for (int i = 0; i < 10; i++)
       {
-        int N_op = 0;
         //заполняем очередь и хранилище ключей рандомными целыми числами
         for (int j = 0; j < _digitsCount; j++)
         {
@@ -46,12 +45,12 @@ namespace QuickQueueSort
         Console.WriteLine($"Sorting number: {i + 1}");
         Console.WriteLine($"\tNumber of sorted items: {_digitsCount};");
         Console.WriteLine($"\tSorting time (h.m.s.ms): {interval.Hours}, {interval.Minutes}, {interval.Seconds}, {interval.Milliseconds};");
-        Console.WriteLine($"\tThe number of operations (N_op): {N_op}");
+        Console.WriteLine($"\tThe number of operations (N_op): {queue.N_op}");
         Console.WriteLine();
 
 
         _digitsCount += 300;
-        N_op = 0;
+        queue.N_op = 0;
         //очищаем очередь для последующей сортировки с большим кол-вом элементов
         queue.Clear();
         time.Reset();
