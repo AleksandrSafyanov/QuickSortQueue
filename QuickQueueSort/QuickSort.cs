@@ -15,11 +15,14 @@ namespace QuickQueueSort
         N_op++;
         int ValueGet = 0;
 
-        N_op += 3;
+        N_op++;
+        int Count1 = Count;
+
+        N_op += 2;
         //переборка всех значений очереди
-        for (int i = 1; i < Count + 1; i++)
+        for (int i = 1; i < Count1; i++)
         {
-          N_op += 3 + 1;
+          N_op += 2 + 1;
           //если цикл дошел до нужной позиции => в ValueGet записывается значение
           if (i == Position)
           {
@@ -55,15 +58,17 @@ namespace QuickQueueSort
       N_op += 2;
       if (Count != 0)
       {
+        N_op++;
+        int Count1 = Count;
         N_op += 2;
         //если кол-во элементов в очереди больше переданной позиции
         if (Position <= Count)
         {
-          N_op += 3;
+          N_op += 2;
           //переборка всех значений очереди
-          for (int i = 1; i < Count + 1; i++)
+          for (int i = 1; i < Count1; i++)
           {
-            N_op += 3 + 1;
+            N_op += 2 + 1;
             //если цикл дошел до нужной позиции => "голова" удаляется и в "хвост" записывается значение передаваемое параметром
             if (i == Position)
             {
@@ -96,7 +101,7 @@ namespace QuickQueueSort
             N_op += 4;
             for (int i = Count + 1; i < Position; i++)
             {
-              N_op += 4 + 12;
+              N_op += 2 + 12;
               Enqueue(0);
             }
             N_op += 12;
