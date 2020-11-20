@@ -58,10 +58,7 @@ namespace QuickQueueSort
       {
         N_op++;
         int Count1 = Count + 1;
-        N_op += 2;
-        //если кол-во элементов в очереди больше переданной позиции
-        //if (Position <= Count)
-        //{
+
         N_op += 2;
         //переборка всех значений очереди
         for (int i = 1; i < Count1; i++)
@@ -81,33 +78,6 @@ namespace QuickQueueSort
             Enqueue(Dequeue());
           }
         }
-        //}
-        //если кол-во элементов в очереди меньше переданной позиции 
-        //else
-        //{
-        //  N_op++;
-        //  //если переданная позиция равна кол-ву элементов в очереди + 1 => добавляется значение в начало
-        //  if (Position == Count1)
-        //  {
-        //    N_op++;
-        //    Enqueue(ValueSet);
-        //  }
-            
-        //  //иначе все последующие элементы до переданной позиции заполнятся нулями
-        //  else
-        //  {
-        //    N_op += 4;
-        //    for (int i = Count + 1; i < Position; i++)
-        //    {
-        //      N_op++;
-        //      Enqueue(0);
-        //    }
-
-        //    //а на место переданной позиции установится переданной значение
-        //    N_op++;
-        //    Enqueue(ValueSet);
-        //  }
-        //}
       }
       else
       {
@@ -126,37 +96,41 @@ namespace QuickQueueSort
       N_op += 2;
       int left = leftBorder;
       int right = rightBorder;
-      int pivot = GetNumber((left + right) / 2);
+      N_op += 1;
+      int pivot = GetNumber(leftBorder);
 
+      N_op++;
       while (left <= right)
       {
+        N_op++;
         while (GetNumber(left) < pivot)
         {
+          N_op++;
           left++;
         }
+
+        N_op++;
         while (GetNumber(right) > pivot)
         {
+          N_op++;
           right--;
         }
+        N_op++;
         if (left <= right)
         {
           Swap(left, right);
+          N_op += 2;
           left++;
           right--;
         }
       }
       N_op++;
       if (left < rightBorder)
-      {
-        N_op++;
         QuickSort(left, rightBorder);
-      }
+
       N_op++;
-      if (leftBorder < right)  //2
-      {
-        N_op++;
-        QuickSort(leftBorder, right); //left - 1 => 1 операция
-      }
+      if (leftBorder < right)  
+        QuickSort(leftBorder, right); 
     }
 
       /*

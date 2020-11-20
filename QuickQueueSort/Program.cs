@@ -46,6 +46,7 @@ namespace QuickQueueSort
         queue.Clear();
         time.Reset();
       }
+      Console.ReadKey();
 
 
       ////хранилище ключей
@@ -53,14 +54,14 @@ namespace QuickQueueSort
 
       //for (int j = 0; j < _digitsCount; j++)
       //{
-      //  key[j] = rnd.Next(9999);
+      //  key[j] = rnd.Next(3000);
       //  queue.Enqueue(key[j]);
       //}
 
       //Console.WriteLine("Unsorted queue:");
       //for (int i = 0; i < _digitsCount; i++)
       //  Console.Write("{0,6}", key[i]);
-
+      //queue.QuickSort(1, _digitsCount);
       //time.Start();
 
       //queue.QuickSort(1, _digitsCount);
