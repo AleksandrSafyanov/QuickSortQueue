@@ -22,17 +22,16 @@ namespace QuickQueueSort
 
       //for (int j = 0; j < _digitsCount; j++)
       //{
-      //  key[j] = rnd.Next(3000);
+      //  key[j] = rnd.Next(9999);
       //  queue.Enqueue(key[j]);
       //}
 
       for (int i = 0; i < 10; i++)
       {
-        //заполняем очередь и хранилище ключей рандомными целыми числами
+        //заполняем очередь рандомными целыми числами
         for (int j = 0; j < _digitsCount; j++)
-        {
-          queue.Enqueue(rnd.Next(3000));
-        }
+          queue.Enqueue(rnd.Next(9999));
+
         //начало отсчета времени
         time.Start();
 
