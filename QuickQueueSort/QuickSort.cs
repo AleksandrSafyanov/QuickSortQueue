@@ -126,8 +126,7 @@ namespace QuickQueueSort
       N_op += 2;
       int left = leftBorder;
       int right = rightBorder;
-      int pivotDigit = (left + right) / 2;
-      int pivot = GetNumber(pivotDigit);
+      int pivot = GetNumber((left + right) / 2);
 
       while (left <= right)
       {
