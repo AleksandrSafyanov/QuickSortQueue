@@ -120,23 +120,58 @@ namespace QuickQueueSort
     public void QuickSort(int leftBorder, int rightBorder)
     {
       N_op++;
-      if (leftBorder >= rightBorder)
+      if (leftBorder > rightBorder)
         return;
 
-      N_op+=2;
+      N_op += 2;
       int left = leftBorder;
       int right = rightBorder;
+      int pivotDigit = (left + right) / 2;
+      int pivot = GetNumber(pivotDigit);
 
+      while (left <= right)
+      {
+        while (GetNumber(left) < pivot)
+        {
+          left++;
+        }
+        while (GetNumber(right) > pivot)
+        {
+          right--;
+        }
+        if (left <= right)
+        {
+          Swap(left, right);
+          left++;
+          right--;
+        }
+      }
+      N_op++;
+      if (left < rightBorder)
+      {
+        N_op++;
+        QuickSort(left, rightBorder);
+      }
+      N_op++;
+      if (leftBorder < right)  //2
+      {
+        N_op++;
+        QuickSort(leftBorder, right); //left - 1 => 1 операция
+      }
+    }
+
+      /*
       N_op++;
       while (left != right)
       {
+
         N_op++;
         while (left != right)
         {
           N_op++;
           if (GetNumber(left) <= GetNumber(right))
           {
-            N_op+=2;
+            N_op += 2;
             --right;
           }
 
@@ -145,8 +180,10 @@ namespace QuickQueueSort
             Swap(left, right);
             N_op += 2;
             --right;
+            break;
           }
         }
+
         N_op++;
         while (left != right)
         {
@@ -162,10 +199,11 @@ namespace QuickQueueSort
             Swap(left, right);
             N_op += 2;
             ++left;
+            break;
           }
         }
       }
-      N_op+=2;
+      N_op += 2;
       if (left - 1 > leftBorder)  //2
       {
         N_op++;
@@ -177,7 +215,8 @@ namespace QuickQueueSort
         N_op++;
         QuickSort(right + 1, rightBorder);
       }
-    }
+      */
+    //}
 
     //метод замены элементов местами
     public void Swap(int leftElement, int rightElement)

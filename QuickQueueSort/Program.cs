@@ -11,20 +11,11 @@ namespace QuickQueueSort
       int _digitsCount = 300;
 
       var time = new Stopwatch();
-
-      //хранилище ключей
-      int[] key = new int[_digitsCount];
       
       //встроенный класс очереди
       Sort queue = new Sort();
 
       Random rnd = new Random();
-
-      //for (int j = 0; j < _digitsCount; j++)
-      //{
-      //  key[j] = rnd.Next(9999);
-      //  queue.Enqueue(key[j]);
-      //}
 
       for (int i = 0; i < 10; i++)
       {
@@ -55,6 +46,16 @@ namespace QuickQueueSort
         queue.Clear();
         time.Reset();
       }
+
+
+      ////хранилище ключей
+      //int[] key = new int[_digitsCount];
+
+      //for (int j = 0; j < _digitsCount; j++)
+      //{
+      //  key[j] = rnd.Next(9999);
+      //  queue.Enqueue(key[j]);
+      //}
 
       //Console.WriteLine("Unsorted queue:");
       //for (int i = 0; i < _digitsCount; i++)
