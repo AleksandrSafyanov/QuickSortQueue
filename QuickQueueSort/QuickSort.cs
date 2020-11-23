@@ -53,7 +53,7 @@ namespace QuickQueueSort
     //установка значения по индексу
     public void SetNumber(int Position, int ValueSet)
     {
-      N_op += 2;
+      N_op++;
       if (Count != 0)
       {
         N_op++;
@@ -94,102 +94,157 @@ namespace QuickQueueSort
         return;
 
       N_op += 2;
-      int left = leftBorder;
-      int right = rightBorder;
-      N_op += 1;
-      int pivot = GetNumber(leftBorder);
+      int left = leftBorder, right = rightBorder;
 
-      N_op++;
-      while (left <= right)
-      {
-        N_op++;
-        while (GetNumber(left) < pivot)
-        {
-          N_op++;
-          left++;
-        }
-
-        N_op++;
-        while (GetNumber(right) > pivot)
-        {
-          N_op++;
-          right--;
-        }
-        N_op++;
-        if (left <= right)
-        {
-          Swap(left, right);
-          N_op += 2;
-          left++;
-          right--;
-        }
-      }
-      N_op++;
-      if (left < rightBorder)
-        QuickSort(left, rightBorder);
-
-      N_op++;
-      if (leftBorder < right)  
-        QuickSort(leftBorder, right); 
-    }
-
-      /*
       N_op++;
       while (left != right)
       {
-
         N_op++;
         while (left != right)
         {
           N_op++;
           if (GetNumber(left) <= GetNumber(right))
           {
-            N_op += 2;
+            N_op++;
             --right;
           }
-
           else
           {
             Swap(left, right);
-            N_op += 2;
-            --right;
             break;
           }
         }
-
         N_op++;
         while (left != right)
         {
           N_op++;
           if (GetNumber(left) <= GetNumber(right))
           {
-            N_op += 2;
+            N_op++;
             ++left;
           }
-
           else
           {
             Swap(left, right);
-            N_op += 2;
-            ++left;
             break;
           }
         }
       }
       N_op += 2;
-      if (left - 1 > leftBorder)  //2
+      if (left - 1 > leftBorder)
       {
         N_op++;
-        QuickSort(leftBorder, left - 1); //left - 1 => 1 операция
+        QuickSort(leftBorder, left - 1);
       }
-      N_op+=2;
+      N_op += 2;
       if (right + 1 < rightBorder)
       {
         N_op++;
         QuickSort(right + 1, rightBorder);
       }
-      */
-    //}
+    }
+    /*
+    N_op++;
+    if (leftBorder > rightBorder)
+      return;
+
+    N_op += 2;
+    int left = leftBorder;
+    int right = rightBorder;
+    N_op += 1;
+    int pivot = GetNumber(leftBorder);
+
+    N_op++;
+    while (left <= right)
+    {
+      N_op++;
+      while (GetNumber(left) < pivot)
+      {
+        N_op++;
+        left++;
+      }
+
+      N_op++;
+      while (GetNumber(right) > pivot)
+      {
+        N_op++;
+        right--;
+      }
+      N_op++;
+      if (left <= right)
+      {
+        Swap(left, right);
+        N_op += 2;
+        left++;
+        right--;
+      }
+    }
+    N_op++;
+    if (left < rightBorder)
+      QuickSort(left, rightBorder);
+
+    N_op++;
+    if (leftBorder < right)  
+      QuickSort(leftBorder, right); 
+  }
+  */
+
+    /*
+    N_op++;
+    while (left != right)
+    {
+
+      N_op++;
+      while (left != right)
+      {
+        N_op++;
+        if (GetNumber(left) <= GetNumber(right))
+        {
+          N_op += 2;
+          --right;
+        }
+
+        else
+        {
+          Swap(left, right);
+          N_op += 2;
+          --right;
+          break;
+        }
+      }
+
+      N_op++;
+      while (left != right)
+      {
+        N_op++;
+        if (GetNumber(left) <= GetNumber(right))
+        {
+          N_op += 2;
+          ++left;
+        }
+
+        else
+        {
+          Swap(left, right);
+          N_op += 2;
+          ++left;
+          break;
+        }
+      }
+    }
+    N_op += 2;
+    if (left - 1 > leftBorder)  //2
+    {
+      N_op++;
+      QuickSort(leftBorder, left - 1); //left - 1 => 1 операция
+    }
+    N_op+=2;
+    if (right + 1 < rightBorder)
+    {
+      N_op++;
+      QuickSort(right + 1, rightBorder);
+    }
+    */
 
     //метод замены элементов местами
     public void Swap(int leftElement, int rightElement)

@@ -61,7 +61,7 @@ namespace QuickQueueSort
       //Console.WriteLine("Unsorted queue:");
       //for (int i = 0; i < _digitsCount; i++)
       //  Console.Write("{0,6}", key[i]);
-      //queue.QuickSort(1, _digitsCount);
+
       //time.Start();
 
       //queue.QuickSort(1, _digitsCount);
